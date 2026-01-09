@@ -16,6 +16,6 @@ services:
     environment:
       - SERVER_URL=http://teamcity-server:8111
     volumes:
-      - ./data/agent:/data/teamcity_agent/conf
+      - ./data/agent:/data/teamcity-agent/conf
     depends_on:
       - teamcity-server
