@@ -1,19 +1,18 @@
-package _Self
-
-import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.Project
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 /* Archivo de configuración para el proyecto Vsfinal */
 
+version = "2022.10"
+
 project {
-    // Es fundamental que este ID coincida con el nombre que creaste en la web
     description = "Proyecto para la práctica de VS"
 
     buildType(BuildAndTest)
 }
 
 object BuildAndTest : BuildType({
-    id("BuildAndTest")
     name = "CI/CD Pipeline Example"
 
     vcs {
