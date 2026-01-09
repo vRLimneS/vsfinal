@@ -1,16 +1,19 @@
-
 package _Self
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
-version = "2024.03"
+/* Archivo de configuración para el proyecto Vsfinal */
 
 project {
+    // Es fundamental que este ID coincida con el nombre que creaste en la web
+    description = "Proyecto para la práctica de VS"
+
     buildType(BuildAndTest)
 }
 
 object BuildAndTest : BuildType({
+    id("BuildAndTest")
     name = "CI/CD Pipeline Example"
 
     vcs {
@@ -18,17 +21,14 @@ object BuildAndTest : BuildType({
     }
 
     steps {
-        // 1. Fase de Compilación (Build)
         script {
             name = "Compile Project"
             scriptContent = "echo 'Compilando el proyecto...'"
         }
-        // 2. Fase de Test
         script {
             name = "Run Unit Tests"
             scriptContent = "echo 'Ejecutando tests unitarios...'"
         }
-        // 3. Fase de Despliegue (Deploy)
         script {
             name = "Deploy to Staging"
             scriptContent = "echo 'Desplegando en el entorno de pruebas...'"
