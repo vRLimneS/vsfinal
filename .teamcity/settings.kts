@@ -6,16 +6,20 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 
 project {
-    description = "Proyecto para la práctica de VS"
+    description = "Proyecto final de VS"
 
     buildType(BuildAndTest)
 }
 
 object BuildAndTest : BuildType({
-    name = "CI/CD Pipeline Example"
+    name = "CI/CD Pipeline VS"
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    triggers {
+        vcsTrigger{ }
     }
 
     steps {
@@ -30,10 +34,6 @@ object BuildAndTest : BuildType({
         script {
             name = "Deploy to Staging"
             scriptContent = "echo 'Desplegando en el entorno de pruebas...'"
-        }
-    }
-    triggers {
-        vcs {
         }
     }
 })

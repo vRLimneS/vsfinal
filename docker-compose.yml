@@ -11,7 +11,6 @@ services:
       - ./data/server:/data/teamcity_server/datadir
       - ./logs/server:/opt/teamcity/logs
 
-
   teamcity-agent:
     image: jetbrains/teamcity-agent:latest
     environment:
