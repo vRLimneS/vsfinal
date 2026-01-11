@@ -117,32 +117,40 @@ Se incluye un ejemplo de definición de pipeline en el fichero `.teamcity/settin
 Para modificar el pipeline, edita el fichero `.teamcity/settings.kts`:
 
 ```kotlin
-import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.Project
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
+
+/* Archivo de configuración para el proyecto Vsfinal */
+
 
 project {
+    description = "Proyecto final de VS"
+
     buildType(BuildAndTest)
 }
 
 object BuildAndTest : BuildType({
-    name = "CI/CD Pipeline Example"
+    name = "CI/CD Pipeline VS"
 
     vcs {
         root(DslContext.settingsRoot)
     }
 
+    triggers {
+        vcs{ }
+    }
+
     steps {
-        // Etapa 1: Compilación
         script {
             name = "Compile Project"
             scriptContent = "echo 'Compilando el proyecto...'"
         }
-        // Etapa 2: Pruebas
         script {
             name = "Run Unit Tests"
             scriptContent = "echo 'Ejecutando tests unitarios...'"
         }
-        // Etapa 3: Despliegue
         script {
             name = "Deploy to Staging"
             scriptContent = "echo 'Desplegando en el entorno de pruebas...'"
