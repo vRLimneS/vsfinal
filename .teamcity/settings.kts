@@ -4,7 +4,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 /* Archivo de configuración para el proyecto Vsfinal */
 
-version = "2022.10"
 
 project {
     description = "Proyecto para la práctica de VS"
@@ -31,6 +30,10 @@ object BuildAndTest : BuildType({
         script {
             name = "Deploy to Staging"
             scriptContent = "echo 'Desplegando en el entorno de pruebas...'"
+        }
+    }
+    triggers {
+        vcs {
         }
     }
 })
