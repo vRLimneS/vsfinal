@@ -164,6 +164,3 @@ Para detener y eliminar volúmenes (incluyendo datos persistentes):
 ```bash
 docker-compose down -v
 ```
-
-
-hola
