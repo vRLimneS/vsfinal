@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.Project
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /* Archivo de configuración para el proyecto Vsfinal */
 
