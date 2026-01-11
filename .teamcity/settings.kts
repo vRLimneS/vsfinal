@@ -19,7 +19,7 @@ object BuildAndTest : BuildType({
     }
 
     triggers {
-        vcsTrigger{ }
+        vcs{ }
     }
 
     steps {
