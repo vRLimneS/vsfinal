@@ -52,6 +52,28 @@ El fichero de definición se encuentra en `docker-compose.yml`.
 - **Primera configuración**: Al acceder por primera vez, se abrirá el asistente de instalación inicial.
 - **Licencia**: TeamCity incluye una licencia de demostración para desarrollo local.
 
+### Configuración de claves SSH
+
+Para configurar la autenticación con claves SSH, sigue estos pasos:
+
+1. **Generar un par de claves SSH** en tu máquina local:
+   ```bash
+   ssh-keygen -t rsa -b 4096
+   ```
+   
+2. **Configurar la clave pública en GitHub**:
+   - Copia el contenido de la clave pública (generalmente en `~/.ssh/id_rsa.pub`)
+   - Ve a tu repositorio en GitHub: **Settings** → **Deploy keys** → **Add deploy key**
+   - Pega la clave pública y guárdala
+
+3. **Configurar la clave privada en TeamCity**:
+   - La clave privada se guardará para usarla cuando inicie el servidor
+   - Al arrancar el servidor por primera vez, deberás proporcionar la clave privada.
+
+4. **Primera autorización del agente**:
+   - La primera vez que se arranca el servidor, TeamCity solicitará autorizar el agente
+   - Aprueba la solicitud para que el agente pueda conectarse y ejecutar los builds
+
 ## 4. Ejemplo de Pipeline
 
 Se incluye un ejemplo de definición de pipeline en el fichero `.teamcity/settings.kts`. Este fichero Kotlin DSL define un pipeline con 3 etapas:
