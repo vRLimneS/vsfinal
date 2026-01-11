@@ -2,7 +2,7 @@
 
 ## 1. Introducción
 
-TeamCity es un servidor de integración y entrega continuas (CI/CD) desarrollado por JetBrains. Ofrece una solución empresarial robusta y altamente configurable para **automatizar la compilación, prueba y despliegue de aplicaciones**. Su arquitectura de servidor-agente permite distribuir la carga de trabajo y escalar fácilmente, siendo compatible con múltiples plataformas y lenguajes de programación.
+TeamCity es un servidor de integración y entrega continuas (CI/CD). Ofrece una solución empresarial robusta y altamente configurable para **automatizar la compilación, prueba y despliegue de aplicaciones**. Su arquitectura de servidor-agente permite distribuir la carga de trabajo y escalar fácilmente, siendo compatible con múltiples plataformas y lenguajes de programación.
 
 ## 2. Características DevOps, CI/CD e IaC
 
@@ -105,8 +105,9 @@ Se incluye un ejemplo de definición de pipeline en el fichero `.teamcity/settin
    - Si no se importa automáticamente, ir a **Project Settings** → **Version Control Settings** y vincular el repositorio.
 
 6. **Ejecutar el pipeline**:
-   - Ir a la página principal del proyecto y seleccionar la configuración de build "CI/CD Pipeline Example".
+   - Ir a la página principal del proyecto y seleccionar la configuración de build "CI/CD Pipeline VS".
    - Hacer clic en **Run** para ejecutar manualmente, o esperar a que se dispare automáticamente al hacer un push al repositorio.
+   - Cuando se dispare por primera vez un trigger tendrás que ir a TeamCity para autorizar que esos triggers vienen de parte del usuario.
 
 7. **Monitorizar la ejecución**:
    - Observar el progreso de cada etapa en la interfaz web.
